@@ -48,8 +48,6 @@ main ul {
 
 
 
-
-
 /* header and nav styles */
 
 header {
@@ -291,17 +289,19 @@ nav ul li a:hover {
 
 .services-image{
     grid-area: services-image;
-    width: 100%;
     padding: 0;
-    margin: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    
 }
 
 .services-image img {
-    width: 100%;
+    width: 100%; 
     height: 400px;
-    object-fit: cover; /* Ensures the image covers the container */
+    object-fit: cover; 
     object-position: 0% 73%;
-    border-radius: 0;
+    padding: 0;
+    margin-bottom: 10px;
 }
 
 
@@ -314,14 +314,12 @@ nav ul li a:hover {
     padding: 20px;
     margin: 60px;
     box-sizing: border-box; 
-   
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center text horizontally */
-    text-align: center; /* Center text within the container */
-    flex: 1; /* Ensure content takes remaining space */
+    align-items: center; 
+    text-align: center; 
+    flex: 1; 
     
 }
 
@@ -344,6 +342,110 @@ nav ul li a:hover {
     border-radius: 12px;
     object-fit: cover;
 }
+
+
+
+
+
+/*estimates page*/
+
+.estimates-page {
+    display: grid;
+    grid-template-areas: 
+        "estimates-image estimates-image"
+        "intro-estimates intro-estimates"
+        "domestic-estimates domestic-list"
+        "commercial-estimates commercial-list"
+        "testing-estimate testing-list"
+        "fault-estimate fault-estimate";
+    grid-template-rows: auto;
+    gap: 20px;
+    justify-items: center; 
+}
+
+.intro-estimates {
+    grid-area: intro-estimates;
+}
+
+.domestic-estimates {
+    grid-area: domestic-estimates;
+    
+    
+}
+
+.domestic-list {
+    grid-area: domestic-list;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    
+}
+
+.commercial-estimates {
+    grid-area: commercial-estimates;
+}
+
+.commercial-list {
+    grid-area: commercial-list;
+}
+
+.testing-estimate {
+    grid-area: testing-estimate;
+}
+
+.testing-list {
+    grid-area: testing-list;
+}
+
+.fault-estimate {
+    grid-area: fault-estimate;
+}
+
+.intro-estimates, .domestic-estimates, .commercial-estimates, .testing-estimate, .fault-estimate, .domestic-list, .commercial-list, .testing-list {
+    background-color: #ffffff;
+    border: 3px solid darkslategray;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 60px;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center; 
+    flex: 1; 
+    
+}
+
+#estimates-form {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+}
+
+#estimates-form label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#estimates-form input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#total-estimate {
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+}
+
+
 
 
 

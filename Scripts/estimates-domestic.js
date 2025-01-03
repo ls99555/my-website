@@ -2,19 +2,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const domesticList = document.querySelector('.domestic-list');
 
     const services = [
-        { name: 'New cooker or oven supply', price: 80, type: 'number' },
-        { name: 'Cooker hood supply', price: 50, type: 'number' },
-        { name: 'Double or single socket', price: 50, type: 'number' },
-        { name: 'USB sockets', price: 75, type: 'number' },
-        { name: 'Outside socket', price: 60, type: 'number' },
-        { name: 'Downlights', price: 60, type: 'number' },
-        { name: 'Ceiling pendant', price: 45, type: 'number' },
-        { name: 'Lighting supply no fitting supplied', price: 40, type: 'number' },
-        { name: 'Outside lights', price: 50, type: 'number' },
-        { name: 'Bathroom fans', price: 160, type: 'number' },
-        { name: 'Consumer unit and testing', price: 350, type: 'number' },
-        { name: 'Electric shower supply', price: 200, type: 'number' },
-        { name: 'Electric car charger', price: 350, type: 'number' }
+        { name: 'New cooker or oven supply', price: 80 },
+        { name: 'Cooker hood supply', price: 50 },
+        { name: 'Double or single socket', price: 50 },
+        { name: 'USB sockets', price: 75 },
+        { name: 'Outside socket', price: 60 },
+        { name: 'Downlights', price: 60 },
+        { name: 'Ceiling pendant', price: 45 },
+        { name: 'Lighting supply no fitting supplied', price: 40 },
+        { name: 'Outside lights', price: 50 },
+        { name: 'Bathroom fans', price: 160 },
+        { name: 'Consumer unit and testing', price: 350 },
+        { name: 'Electric shower supply', price: 200 },
+        { name: 'Electric car charger', price: 350 }
     ];
 
     const form = document.createElement('form');
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     services.forEach(service => {
         const label = document.createElement('label');
+        label.className = 'service-label';
         label.textContent = `${service.name} (£${service.price} each):`;
 
         const input = document.createElement('input');
@@ -33,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         label.appendChild(input);
         form.appendChild(label);
-        form.appendChild(document.createElement('br'));
     });
 
     const totalEstimate = document.createElement('p');
     totalEstimate.innerHTML = 'Total Estimate: £<span id="total-estimate">0</span>';
+    totalEstimate.style.gridColumn = 'span 3'; // Span across both columns
     form.appendChild(totalEstimate);
 
     domesticList.appendChild(form);
