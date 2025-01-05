@@ -361,6 +361,12 @@ nav ul li a:hover {
     grid-template-rows: auto;
     gap: 20px;
     justify-items: center; 
+    
+}
+
+.domestic-list, .commercial-list, .testing-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .intro-estimates {
@@ -369,14 +375,10 @@ nav ul li a:hover {
 
 .domestic-estimates {
     grid-area: domestic-estimates;
-    
-    
 }
 
 .domestic-list {
     grid-area: domestic-list;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
     
 }
 
@@ -416,10 +418,33 @@ nav ul li a:hover {
     
 }
 
+
+/*estimates form styling*/
+
+
+#estimates-form ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#estimates-form li {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.103);
+    transition: background-color 0.3s ease;
+}
+
+#estimates-form li:hover {
+    background-color: #f1f1f1;
+}
+
+
 #estimates-form {
     display: grid;
     gap: 10px;
-    width: 100%;
 }
 
 #estimates-form label {
@@ -430,6 +455,12 @@ nav ul li a:hover {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+ #estimates-form label:hover {
+    background-color: #f1f1f1;
 }
 
 #estimates-form input[type="number"] {
@@ -443,15 +474,8 @@ nav ul li a:hover {
     font-weight: bold;
     text-align: right;
     margin-top: 20px;
+    grid-column: span 2; /* Span across both columns */
 }
-
-
-
-
-
-
-
-
 
 
 /*footer styles*/
