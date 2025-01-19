@@ -357,10 +357,23 @@ nav ul li a:hover {
         "domestic-estimates domestic-list"
         "commercial-estimates commercial-list"
         "testing-estimate testing-list"
-        "fault-estimate fault-estimate";
+        "total-price-container total-price-container";
     grid-template-rows: auto;
     gap: 20px;
     justify-items: center; 
+    
+}
+
+.estimates-image {
+    grid-area: estimates-image;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.estimates-image img {
+    width: 100%; 
+    height: 400px;
+    object-fit: cover; 
     
 }
 
@@ -398,11 +411,12 @@ nav ul li a:hover {
     grid-area: testing-list;
 }
 
-.fault-estimate {
-    grid-area: fault-estimate;
+
+.total-price-container {
+    grid-area: total-price-container;
 }
 
-.intro-estimates, .domestic-estimates, .commercial-estimates, .testing-estimate, .fault-estimate, .domestic-list, .commercial-list, .testing-list {
+.intro-estimates, .domestic-estimates, .commercial-estimates, .testing-estimate, .domestic-list, .commercial-list, .testing-list, .total-price-container {
     background-color: #ffffff;
     border: 3px solid darkslategray;
     border-radius: 12px;
@@ -419,15 +433,17 @@ nav ul li a:hover {
 }
 
 
+
+
 /*estimates form styling*/
 
 
-#estimates-form ul {
+.estimates-form ul {
     list-style-type: none;
     padding: 0;
 }
 
-#estimates-form li {
+.estimates-form li {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -437,17 +453,18 @@ nav ul li a:hover {
     transition: background-color 0.3s ease;
 }
 
-#estimates-form li:hover {
+.estimates-form li:hover {
     background-color: #f1f1f1;
 }
 
 
-#estimates-form {
+.estimates-form {
     display: grid;
     gap: 10px;
 }
 
-#estimates-form label {
+
+.estimates-form label {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -459,23 +476,64 @@ nav ul li a:hover {
     transition: background-color 0.3s ease;
 }
 
- #estimates-form label:hover {
+ .estimates-form label:hover {
     background-color: #f1f1f1;
 }
 
-#estimates-form input[type="number"] {
-    width: 60px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.service-label input {
+    margin-left: 20px; 
+    width: 50px;
 }
 
-#total-estimate {
-    font-weight: bold;
-    text-align: right;
-    margin-top: 20px;
-    grid-column: span 2; /* Span across both columns */
+
+.additional-info-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    box-sizing: border-box; 
 }
+
+.additional-info-form label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.additional-info-form input[type="text"],
+.additional-info-form input[type="email"],
+.additional-info-form input[type="tel"],
+.additional-info-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* Add margin between form elements */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.additional-info-form textarea {
+    height: 20px; /* Same height as the input fields initially */
+    resize: none; /* Prevent manual resizing */
+}
+
+.additional-info-form textarea:focus {
+    height: 100px; /* Expand height on focus */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.additional-info-form .btn {
+    align-self: flex-end; /* Align the button to the end of the form */
+    margin-top: 20px; /* Add some space above the button */
+}
+
+
+
 
 
 /*footer styles*/

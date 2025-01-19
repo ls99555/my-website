@@ -8,8 +8,8 @@
 </head>
 <body>
     <main class="estimates-page">
-        <div class="estimate-picture">
-            <img src="Images/estimate-banner.jpg" alt="Estimate Banner">
+        <div class="estimates-image">
+            <img src="Images/estimates.jpg" alt="Estimate Banner">
         </div>
         <div class="intro-estimates">
             <h1>Get Your Estimate</h1>
@@ -20,13 +20,13 @@
        
         <div class="domestic-estimates">
             <h2>Domestic Electrical Work</h2>
-            <p>The average price for Domestic Electrical Work is in the region of:</p>
+            <p>We offer a wide range of domestic electrical services to ensure your home is safe and functional. Our services include:</p>
             <ul>
-                <li>Rewiring a 3-bedroom house: £3,000 - £4,500</li>
-                <li>Installing new electrical sockets: £100 - £150 per socket</li>
-                <li>Installing new lighting fixtures: £50 - £100 per fixture</li>
-                <li>Electrical safety certificate: £100 - £150</li>
-                <li>Consumer unit replacement: £400 - £600</li>
+                <li>Rewiring a 3-bedroom house: Comprehensive rewiring to ensure all electrical systems are up to code and safe.</li>
+                <li>Installing new electrical sockets: Adding new sockets to improve convenience and accessibility in your home.</li>
+                <li>Installing new lighting fixtures: Upgrading or adding new lighting fixtures to enhance the ambiance and functionality of your space.</li>
+                <li>Electrical safety certificate: Providing certification to confirm that your electrical installations meet safety standards.</li>
+                <li>Consumer unit replacement: Replacing old or faulty consumer units to ensure reliable and safe electrical distribution.</li>
             </ul>
         </div>
        
@@ -34,13 +34,13 @@
 
         <div class="commercial-estimates">
             <h2>Commercial Electrical Work</h2>
-            <p>The average price for Commercial Electrical Work is in the region of:</p>
+            <p>Our commercial electrical services are designed to meet the needs of businesses of all sizes. We provide:</p>
             <ul>
-                <li>Office rewiring: £4,000 - £8,000</li>
-                <li>Installing new electrical sockets: £100 - £200 per socket</li>
-                <li>Installing new lighting fixtures: £100 - £200 per fixture</li>
-                <li>Electrical safety certificate: £150 - £250</li>
-                <li>Consumer unit replacement: £500 - £800</li>
+                <li>Office rewiring: Complete rewiring services to ensure your office's electrical systems are efficient and up to date.</li>
+                <li>Installing new electrical sockets: Adding additional sockets to accommodate your business's growing power needs.</li>
+                <li>Installing new lighting fixtures: Enhancing your workspace with modern, energy-efficient lighting solutions.</li>
+                <li>Electrical safety certificate: Certifying that your commercial property meets all electrical safety regulations.</li>
+                <li>Consumer unit replacement: Upgrading consumer units to handle increased electrical loads and improve safety.</li>
             </ul>
         </div>
        
@@ -48,31 +48,32 @@
 
         <div class="testing-estimate">
             <h2>Electrical Testing and Inspection</h2>
-            <p>The average price for Electrical Testing and Inspection is in the region of:</p>
+            <p>We offer thorough electrical testing and inspection services to ensure the safety and reliability of your electrical systems. Our services include:</p>
             <ul>
-                <li>Periodic inspection report: £100 - £200</li>
-                <li>Portable appliance testing (PAT): £1 - £2 per item</li>
-                <li>Electrical installation condition report (EICR): £100 - £200</li>
-                <li>Landlord safety certificate: £100 - £150</li>
+                <li>Periodic inspection report: Regular inspections to identify and address potential electrical issues before they become serious problems.</li>
+                <li>Portable appliance testing (PAT): Testing portable appliances to ensure they are safe to use and comply with safety standards.</li>
+                <li>Electrical installation condition report (EICR): Detailed reports on the condition of your electrical installations, highlighting any necessary repairs or upgrades.</li>
+                <li>Landlord safety certificate: Providing landlords with the necessary certification to confirm their properties meet electrical safety requirements.</li>
             </ul>
         </div>
         
         <div class="testing-list"></div>
 
-        <div class="fault-estimate">
-            <h2>Fault Finding and Repairs</h2>
-            <p>The average price for Fault Finding and Repairs is in the region of:</p>
-            <ul>
-                <li>Hourly rate for fault finding: £40 - £60 per hour</li>
-                <li>Minor electrical repairs: £50 - £100</li>
-                <li>Major electrical repairs: £200 - £500</li>
-                <li>Emergency call-out charge: £100 - £150</li>
-            </ul>
+        <div class="total-price-container">
+            <div class="total-price"><h2>Your total estimate is £0</h2></div> <!-- Container for the grand total -->
+            <form class="additional-info-form">
+                <label for="additional-info">Additional Information:</label>
+                <textarea id="additional-info" name="additional-info" rows="4" cols="50"></textarea>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <button type="submit" class="btn">Submit <span class="button-arrow"> > ></span></button> <!-- Apply the same class as home page buttons -->
+            </form>
         </div>
 
-        
-
-        </div>
     </main>
     <script src="Scripts/estimates-pricing-list.js"></script>
     <script src="Scripts/nav.js"></script>

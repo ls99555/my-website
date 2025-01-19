@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: 'team.html', text: 'Meet the team' },
         { href: 'services.html', text: 'Services' },
         { href: 'estimates.html', text: 'Estimates' },
-        { href: 'electrical-calculations.html', text: 'Electrical Calculations' },
         { href: 'contact.html', text: 'Contact' }
     ];
 
