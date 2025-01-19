@@ -1,15 +1,23 @@
 /*reusable styles*/
+// Variables
+$primary-color: darkslategray;
+$secondary-color: #8c847c;
+$background-color:#ffffff;
+$font-family: Aerial, Helvetica, sans-serief;
+
+
+
 html, body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $font-family;
     margin: 0;
-    background-color: #ffffff;
+    background-color: $background-color;
     overflow-x: hidden;
     
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     text-transform: uppercase;
-    color: darkslategray;
+    color: $primary-color;
 }
 
 
@@ -27,15 +35,17 @@ button {
     position: relative;
     padding: 10px 20px;  
     width: 200px;
+
+    .button-arrow{
+        display: none;
+    }
+    
+    button:hover .button-arrow{
+        display:contents;
+    }
 }
  
-.button-arrow{
-    display: none;
-}
 
-button:hover .button-arrow{
-    display:contents;
-}
 
 main li {
     margin-bottom: 10px;
@@ -46,6 +56,31 @@ main ul {
     padding-left: 20px;
 }
 
+/*footer styles*/
+
+footer {
+    background-color: darkslategray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100px;
+    margin-top: 20px;
+    
+}
+
+
+
+footer a {
+    color: #8c847c;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 
 /* header and nav styles */
@@ -533,31 +568,99 @@ nav ul li a:hover {
 }
 
 
+/* contact page styles */
+
+
+.contact-page {
+    display: grid;
+    grid-template-areas: 
+        "contact-image contact-image"
+        "contact-intro contact-intro"
+        "contact-info contact-map"
+        "contact-form-container contact-form-container";
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact-image {
+    grid-area: contact-image;
+}
+
+.contact-intro {
+    grid-area: contact-intro;
+}
+
+.contact-info {
+    grid-area: contact-info;
+}
+
+.contact-map {
+    grid-area: contact-map;
+   
+}
+
+iframe {
+    
+    max-width: 500px;
+    max-height: 300px;
+}
+
+.contact-form-container {
+    grid-area: contact-form-container;
+}
 
 
 
-/*footer styles*/
-
-footer {
-    background-color: darkslategray;
-    color: white;
-    display: flex;
-    justify-content: center;
+.contact-intro, .contact-info, .contact-map, .contact-form-container {
+    background-color: #ffffff;
+    border: 3px solid darkslategray;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    box-sizing: border-box;
     text-align: center;
-    align-items: center;
-    height: 100px;
-    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+
+.contact-form textarea {
+    height: 60px; /* Same height as the input fields initially */
+    resize: none; /* Prevent manual resizing */
+}
+
+.contact-form textarea:focus {
+    height: 200px; /* Expand height on focus */
+    resize: vertical; /* Allow vertical resizing */
 }
 
 
 
-footer a {
-    color: #8c847c;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
 
