@@ -1,666 +1,466 @@
-/*reusable styles*/
-// Variables
-$primary-color: darkslategray;
-$secondary-color: #8c847c;
-$background-color:#ffffff;
-$font-family: Aerial, Helvetica, sans-serief;
-
-
-
 html, body {
-    font-family: $font-family;
-    margin: 0;
-    background-color: $background-color;
-    overflow-x: hidden;
-    
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
-    text-transform: uppercase;
-    color: $primary-color;
+  text-transform: uppercase;
+  color: darkslategray;
 }
-
-
-button {
-    background-color: darkslategray;
-    color: white;
-    border: none;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px auto;
-    cursor: pointer;
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    padding: 10px 20px;  
-    width: 200px;
-
-    .button-arrow{
-        display: none;
-    }
-    
-    button:hover .button-arrow{
-        display:contents;
-    }
-}
- 
-
 
 main li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
-
 main ul {
-    margin-top: 10px;
-    padding-left: 20px;
+  margin-top: 10px;
+  padding-left: 20px;
 }
 
-/*footer styles*/
-
-footer {
-    background-color: darkslategray;
-    color: white;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    height: 100px;
-    margin-top: 20px;
-    
+button {
+  background-color: darkslategray;
+  color: white;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px auto;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 20px;
+  width: 200px;
 }
-
-
-
-footer a {
-    color: #8c847c;
-    text-decoration: none;
+button .button-arrow {
+  display: none;
 }
-
-footer a:hover {
-    text-decoration: underline;
-    cursor: pointer;
+button:hover .button-arrow {
+  display: contents;
 }
-
-
-/* header and nav styles */
 
 header {
-    
-    background-color: darkslategray;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
+  background-color: darkslategray;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 header a {
-    text-decoration: none;
-    color: white;
-    border: 20px;
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  padding: 14px;
 }
-
 header a:hover {
-    background-color: #111;
-    border-radius: 12px;
+  background-color: #111;
+  border-radius: 12px;
+}
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+header nav ul li {
+  margin-left: 10px;
+}
+header nav ul li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  background-color: #111;
+  border-radius: 12px;
 }
 
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex; 
-    justify-content: flex-end; 
+footer {
+  background-color: darkslategray;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 20px;
 }
-
-nav ul li {
-    margin-left: 10px; 
+footer a {
+  color: #8c847c;
+  text-decoration: none;
 }
-
-nav ul li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
+footer a:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
-
-nav ul li a:hover {
-    background-color: #111;
-    border-radius: 12px;
-}
-
-
-
-
-
-/* index page items */
 
 .index-page {
-    display: grid;
-    grid-template-areas: 
-        "cu-image cu-image"
-        "about-us our-services"
-        "estimates contact";
-    grid-template-rows: auto auto auto;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-areas: "cu-image cu-image" "about-us our-services" "estimates contact";
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr;
 }
-
-
-.cu-image {
-    grid-area: cu-image;
-    padding: 0;
-    margin: 0;
+.index-page .cu-image {
+  grid-area: cu-image;
+  padding: 0;
+  margin: 0;
 }
-
-.cu-image img {
-    width: 100%; 
-    height: 400px; 
-    object-fit: cover;
+.index-page .cu-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
-
-.about-us {
-    grid-area: about-us;
-    margin-top: 60px;
-    margin-left: 60px;
-    margin-right: 30px;
-    
+.index-page .about-us {
+  grid-area: about-us;
+  margin: 60px 30px 0 60px;
 }
-
-.our-services {
-    grid-area: our-services;
-    margin-top: 60px;
-    margin-right: 60px;
-    margin-left: 30px;
-   
+.index-page .our-services {
+  grid-area: our-services;
+  margin: 60px 60px 0 30px;
 }
-
-.contact {
-    grid-area: contact;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    margin-right: 60px;
-    margin-left: 30px;
+.index-page .contact {
+  grid-area: contact;
+  margin: 60px 60px 60px 30px;
 }
-
-.contact a {
-    color: darkslategray;
-    text-decoration: none; 
+.index-page .contact a {
+  color: darkslategray;
+  text-decoration: none;
 }
-
-.contact a:hover {
-    text-decoration: underline;
-    cursor: pointer;
+.index-page .contact a:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
-
-.estimates {
-    grid-area: estimates;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    margin-left: 60px;
-    margin-right: 30px;
+.index-page .estimates {
+  grid-area: estimates;
+  margin: 60px 30px 60px 60px;
 }
-
- .about-us, .our-services, .contact, .estimates {
-    background-color: #ffffff;
-    border: 3px solid darkslategray;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    padding: 20px;
-    
+.index-page .about-us, .index-page .our-services, .index-page .contact, .index-page .estimates {
+  background-color: #ffffff;
+  border: 3px solid darkslategray;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 20px;
 }
-
-
-
-
-/*team page styles */
 
 .team-page {
-    display: grid;
-    grid-template-areas: 
-        "team-image team-image"
-        "our-team our-team"
-        "david-johnson david-johnson"
-        "john-smith john-smith"
-        "sarah-johnson sarah-johnson"
-        "michael-brown michael-brown"
-        "emily-davis emily-davis"
-        "james-wilson james-wilson";
-    grid-template-rows: auto;
-    grid-template-columns: 1fr;
-    justify-items: center; /* Center items horizontally */
-    text-align: center;
-  
+  display: grid;
+  grid-template-areas: "team-image team-image" "our-team our-team" "david-johnson david-johnson" "john-smith john-smith" "sarah-johnson sarah-johnson" "michael-brown michael-brown" "emily-davis emily-davis" "james-wilson james-wilson";
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
 }
-
-
-.team-image {
-    grid-area: team-image;
-    padding: 0;
-    margin-bottom: 10px;
+.team-page .team-image {
+  grid-area: team-image;
+  padding: 0;
+  margin-bottom: 10px;
 }
-
-.team-image img {
-    width: 100%; 
-    height: 400px;
-    object-fit: cover; 
-    
+.team-page .team-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
-
-.our-team, .david-johnson, .john-smith, .sarah-johnson, .michael-brown, .emily-davis, .james-wilson {
-    background-color: #ffffff;
-    border: 3px solid darkslategray;
-    border-radius: 12px;
-    padding: 20px;
-    width: 100%; 
-    max-width: 800px; 
-    margin: 0 auto; 
-    margin: 20px;
+.team-page .our-team, .team-page .david-johnson, .team-page .john-smith, .team-page .sarah-johnson, .team-page .michael-brown, .team-page .emily-davis, .team-page .james-wilson {
+  background-color: #ffffff;
+  border: 3px solid darkslategray;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
 }
- .team-photos {
- border-radius: 50%;
- margin: 20px;
- height: 200px;
- }
-
-.team-photos img {
-    object-fit: cover;
+.team-page .team-photos {
+  border-radius: 50%;
+  margin: 20px;
+  height: 200px;
 }
-
- .our-team {
-    grid-area: our-team;
+.team-page .team-photos img {
+  object-fit: cover;
 }
-
-.david-johnson {
-    grid-area: david-johnson;
+.team-page .our-team {
+  grid-area: our-team;
 }
-
-.john-smith {
-    grid-area: john-smith;
+.team-page .david-johnson {
+  grid-area: david-johnson;
 }
-
-.sarah-johnson {
-    grid-area: sarah-johnson;
+.team-page .john-smith {
+  grid-area: john-smith;
 }
-
-.michael-brown {
-    grid-area: michael-brown;
+.team-page .sarah-johnson {
+  grid-area: sarah-johnson;
 }
-
-.emily-davis {
-    grid-area: emily-davis;
+.team-page .michael-brown {
+  grid-area: michael-brown;
 }
-
-.james-wilson {
-    grid-area: james-wilson;
+.team-page .emily-davis {
+  grid-area: emily-davis;
 }
-
-/*services page*/
-
+.team-page .james-wilson {
+  grid-area: james-wilson;
+}
 
 .services-page {
-    display: grid;
-    grid-template-areas: 
-        "services-image services-image"
-        "domestic-image domestic-work"
-        "commercial-work commercial-image"
-        "fault-finding-image fault-finding-work"
-        "testing-inspection-work testing-inspection-image";
-    grid-template-rows: auto;
-    gap: 20px;
-    justify-items: center; 
+  display: grid;
+  grid-template-areas: "services-image services-image" "domestic-image domestic-work" "commercial-work commercial-image" "fault-finding-image fault-finding-work" "testing-inspection-work testing-inspection-image";
+  grid-template-rows: auto;
+  gap: 20px;
+  justify-items: center;
 }
-
-
-.services-image{
-    grid-area: services-image;
-    padding: 0;
-    margin-bottom: 10px;
-    width: 100%;
-    
+.services-page .services-image {
+  grid-area: services-image;
+  padding: 0;
+  margin-bottom: 10px;
+  width: 100%;
 }
-
-.services-image img {
-    width: 100%; 
-    height: 400px;
-    object-fit: cover; 
-    object-position: 0% 73%;
-    padding: 0;
-    margin-bottom: 10px;
+.services-page .services-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: 0% 73%;
+  padding: 0;
+  margin-bottom: 10px;
 }
-
-
- .domestic-work, .commercial-work, .fault-finding-work, .testing-inspection-work {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: #ffffff;
-    border: 3px solid darkslategray;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 60px;
-    box-sizing: border-box; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    text-align: center; 
-    flex: 1; 
-    
+.services-page .domestic-work, .services-page .commercial-work, .services-page .fault-finding-work, .services-page .testing-inspection-work {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #ffffff;
+  border: 3px solid darkslategray;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1;
 }
-
-
-.domestic-image, .commercial-image, .fault-finding-image, .testing-inspection-image {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    width: 100%;
-    max-width: 400px;
-    padding: 0; 
-    margin: 0; 
+.services-page .domestic-image, .services-page .commercial-image, .services-page .fault-finding-image, .services-page .testing-inspection-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 0;
+  margin: 0;
 }
-
- 
-
-.domestic-image img, .commercial-image img, .fault-finding-image img, .testing-inspection-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    object-fit: cover;
+.services-page .domestic-image img, .services-page .commercial-image img, .services-page .fault-finding-image img, .services-page .testing-inspection-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
 }
-
-
-
-
-
-/*estimates page*/
 
 .estimates-page {
-    display: grid;
-    grid-template-areas: 
-        "estimates-image estimates-image"
-        "intro-estimates intro-estimates"
-        "domestic-estimates domestic-list"
-        "commercial-estimates commercial-list"
-        "testing-estimate testing-list"
-        "total-price-container total-price-container";
-    grid-template-rows: auto;
-    gap: 20px;
-    justify-items: center; 
-    
+  display: grid;
+  grid-template-areas: "estimates-image estimates-image" "intro-estimates intro-estimates" "domestic-estimates domestic-list" "commercial-estimates commercial-list" "testing-estimate testing-list" "total-price-container total-price-container";
+  grid-template-rows: auto;
+  gap: 20px;
+  justify-items: center;
 }
-
-.estimates-image {
-    grid-area: estimates-image;
-    padding: 0;
-    margin-bottom: 10px;
+.estimates-page .estimates-image {
+  grid-area: estimates-image;
+  padding: 0;
+  margin-bottom: 10px;
 }
-
-.estimates-image img {
-    width: 100%; 
-    height: 400px;
-    object-fit: cover; 
-    
+.estimates-page .estimates-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
-
-.domestic-list, .commercial-list, .testing-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.estimates-page .domestic-list, .estimates-page .commercial-list, .estimates-page .testing-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
-
-.intro-estimates {
-    grid-area: intro-estimates;
+.estimates-page .intro-estimates {
+  grid-area: intro-estimates;
 }
-
-.domestic-estimates {
-    grid-area: domestic-estimates;
+.estimates-page .domestic-estimates {
+  grid-area: domestic-estimates;
 }
-
-.domestic-list {
-    grid-area: domestic-list;
-    
+.estimates-page .domestic-list {
+  grid-area: domestic-list;
 }
-
-.commercial-estimates {
-    grid-area: commercial-estimates;
+.estimates-page .commercial-estimates {
+  grid-area: commercial-estimates;
 }
-
-.commercial-list {
-    grid-area: commercial-list;
+.estimates-page .commercial-list {
+  grid-area: commercial-list;
 }
-
-.testing-estimate {
-    grid-area: testing-estimate;
+.estimates-page .testing-estimate {
+  grid-area: testing-estimate;
 }
-
-.testing-list {
-    grid-area: testing-list;
+.estimates-page .testing-list {
+  grid-area: testing-list;
 }
-
-
-.total-price-container {
-    grid-area: total-price-container;
+.estimates-page .total-price-container {
+  grid-area: total-price-container;
 }
-
-.intro-estimates, .domestic-estimates, .commercial-estimates, .testing-estimate, .domestic-list, .commercial-list, .testing-list, .total-price-container {
-    background-color: #ffffff;
-    border: 3px solid darkslategray;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 60px;
-    box-sizing: border-box; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    text-align: center; 
-    flex: 1; 
-    
+.estimates-page .intro-estimates, .estimates-page .domestic-estimates, .estimates-page .commercial-estimates, .estimates-page .testing-estimate, .estimates-page .domestic-list, .estimates-page .commercial-list, .estimates-page .testing-list, .estimates-page .total-price-container {
+  background-color: #ffffff;
+  border: 3px solid darkslategray;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1;
 }
-
-
-
-
-/*estimates form styling*/
-
-
-.estimates-form ul {
-    list-style-type: none;
-    padding: 0;
+.estimates-page .estimates-form ul {
+  list-style-type: none;
+  padding: 0;
 }
-
-.estimates-form li {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.103);
-    transition: background-color 0.3s ease;
+.estimates-page .estimates-form li {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.103);
+  transition: background-color 0.3s ease;
 }
-
-.estimates-form li:hover {
-    background-color: #f1f1f1;
+.estimates-page .estimates-form li:hover {
+  background-color: #f1f1f1;
 }
-
-
-.estimates-form {
-    display: grid;
-    gap: 10px;
+.estimates-page .estimates-form label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
-
-
-.estimates-form label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+.estimates-page .estimates-form label:hover {
+  background-color: #f1f1f1;
 }
-
- .estimates-form label:hover {
-    background-color: #f1f1f1;
+.estimates-page .estimates-form label input {
+  margin-left: 20px;
+  width: 50px;
 }
-
-.service-label input {
-    margin-left: 20px; 
-    width: 50px;
+.estimates-page .additional-info-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
-
-
-.additional-info-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 600px; 
-    margin: 0 auto; 
-    padding: 20px; 
-    box-sizing: border-box; 
+.estimates-page .additional-info-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
 }
-
-.additional-info-form label {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    margin-bottom: 10px;
+.estimates-page .additional-info-form input[type=text],
+.estimates-page .additional-info-form input[type=email],
+.estimates-page .additional-info-form input[type=tel],
+.estimates-page .additional-info-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
-
-.additional-info-form input[type="text"],
-.additional-info-form input[type="email"],
-.additional-info-form input[type="tel"],
-.additional-info-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px; /* Add margin between form elements */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
+.estimates-page .additional-info-form textarea {
+  height: 20px;
+  resize: none;
 }
-
-.additional-info-form textarea {
-    height: 20px; /* Same height as the input fields initially */
-    resize: none; /* Prevent manual resizing */
+.estimates-page .additional-info-form textarea:focus {
+  height: 100px;
+  resize: vertical;
 }
-
-.additional-info-form textarea:focus {
-    height: 100px; /* Expand height on focus */
-    resize: vertical; /* Allow vertical resizing */
+.estimates-page .additional-info-form .btn {
+  align-self: flex-end;
+  margin-top: 20px;
 }
-
-.additional-info-form .btn {
-    align-self: flex-end; /* Align the button to the end of the form */
-    margin-top: 20px; /* Add some space above the button */
-}
-
-
-/* contact page styles */
-
 
 .contact-page {
-    display: grid;
-    grid-template-areas: 
-        "contact-image contact-image"
-        "contact-intro contact-intro"
-        "contact-info contact-map"
-        "contact-form-container contact-form-container";
-    gap: 20px;
-    justify-items: center;
-    padding: 20px;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-areas: "contact-image contact-image" "contact-intro contact-intro" "contact-info contact-map" "contact-form-container contact-form-container";
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.contact-page .contact-image {
+  grid-area: contact-image;
+}
+.contact-page .contact-intro {
+  grid-area: contact-intro;
+}
+.contact-page .contact-info {
+  grid-area: contact-info;
+}
+.contact-page .contact-map {
+  grid-area: contact-map;
+}
+.contact-page .contact-map iframe {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 300px;
+}
+.contact-page .contact-form-container {
+  grid-area: contact-form-container;
+}
+.contact-page .contact-intro, .contact-page .contact-info, .contact-page .contact-map, .contact-page .contact-form-container {
+  background-color: #ffffff;
+  border: 3px solid darkslategray;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+.contact-page .contact-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.contact-page .contact-form input[type=text],
+.contact-page .contact-form input[type=email],
+.contact-page .contact-form input[type=tel],
+.contact-page .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+.contact-page .contact-form textarea {
+  height: 60px;
+  resize: none;
+}
+.contact-page .contact-form textarea:focus {
+  height: 200px;
+  resize: vertical;
 }
 
-.contact-image {
-    grid-area: contact-image;
-}
-
-.contact-intro {
-    grid-area: contact-intro;
-}
-
-.contact-info {
-    grid-area: contact-info;
-}
-
-.contact-map {
-    grid-area: contact-map;
-   
-}
-
-iframe {
-    
-    max-width: 500px;
-    max-height: 300px;
-}
-
-.contact-form-container {
-    grid-area: contact-form-container;
-}
-
-
-
-.contact-intro, .contact-info, .contact-map, .contact-form-container {
-    background-color: #ffffff;
-    border: 3px solid darkslategray;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-}
-
-.contact-form label {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-
-.contact-form textarea {
-    height: 60px; /* Same height as the input fields initially */
-    resize: none; /* Prevent manual resizing */
-}
-
-.contact-form textarea:focus {
-    height: 200px; /* Expand height on focus */
-    resize: vertical; /* Allow vertical resizing */
-}
-
-
-
-
+/*# sourceMappingURL=styles.css.map */
