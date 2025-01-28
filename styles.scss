@@ -513,6 +513,7 @@ footer {
         "contact-intro contact-intro"
         "contact-info contact-map"
         "contact-form-container contact-form-container";
+    grid-template-rows: auto;
     gap: 20px;
     justify-items: center;
 
@@ -528,7 +529,6 @@ footer {
             object-position: 0% 65%;
         }
     }
-    
 
     .contact-intro {
         grid-area: contact-intro;
@@ -551,6 +551,58 @@ footer {
 
     .contact-form-container {
         grid-area: contact-form-container;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $background-color;
+        border: 3px solid $primary-color;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 60px;
+        
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            label {
+                margin-bottom: 10px;
+                text-align: left;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+                transition: all 0.3s ease;
+            }
+
+            textarea {
+                height: 40px;
+                resize: none;
+
+                &:focus {
+                    height: 100px;
+                    resize: vertical;
+                }
+            }
+
+            .btn {
+                align-self: flex-end;
+                margin-top: 20px;
+            }
+        }
     }
 
     .contact-intro, .contact-info, .contact-map, .contact-form-container {
@@ -565,48 +617,12 @@ footer {
         max-width: 600px;
     }
 
-    .contact-info  a {
+    .contact-info a {
         color: $primary-color;
         text-decoration: none; 
     
         &:hover {
             text-decoration: underline;
-            cursor: pointer;
-        }
-    }
-
-    .contact-form {
-       
-       
-        label {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-
-        textarea {
-            height: 60px;
-            resize: none;
-
-            &:focus {
-                height: 200px;
-                resize: vertical;
-            }
         }
     }
 }

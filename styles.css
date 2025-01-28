@@ -402,6 +402,7 @@ footer a:hover {
 .contact-page {
   display: grid;
   grid-template-areas: "contact-image contact-image" "contact-intro contact-intro" "contact-info contact-map" "contact-form-container contact-form-container";
+  grid-template-rows: auto;
   gap: 20px;
   justify-items: center;
 }
@@ -433,6 +434,51 @@ footer a:hover {
 }
 .contact-page .contact-form-container {
   grid-area: contact-form-container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 3px solid darkslategray;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 60px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+.contact-page .contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact-page .contact-form-container form label {
+  margin-bottom: 10px;
+  text-align: left;
+}
+.contact-page .contact-form-container form input[type=text],
+.contact-page .contact-form-container form input[type=email],
+.contact-page .contact-form-container form input[type=tel],
+.contact-page .contact-form-container form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+.contact-page .contact-form-container form textarea {
+  height: 40px;
+  resize: none;
+}
+.contact-page .contact-form-container form textarea:focus {
+  height: 100px;
+  resize: vertical;
+}
+.contact-page .contact-form-container form .btn {
+  align-self: flex-end;
+  margin-top: 20px;
 }
 .contact-page .contact-intro, .contact-page .contact-info, .contact-page .contact-map, .contact-page .contact-form-container {
   background-color: #ffffff;
@@ -451,34 +497,6 @@ footer a:hover {
 }
 .contact-page .contact-info a:hover {
   text-decoration: underline;
-  cursor: pointer;
-}
-.contact-page .contact-form label {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  margin-bottom: 10px;
-}
-.contact-page .contact-form input[type=text],
-.contact-page .contact-form input[type=email],
-.contact-page .contact-form input[type=tel],
-.contact-page .contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-}
-.contact-page .contact-form textarea {
-  height: 60px;
-  resize: none;
-}
-.contact-page .contact-form textarea:focus {
-  height: 200px;
-  resize: vertical;
 }
 
 /*# sourceMappingURL=styles.css.map */
