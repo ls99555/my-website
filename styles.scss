@@ -15,6 +15,7 @@ html, body {
 h1, h2, h3, h4 {
     text-transform: uppercase;
     color: $primary-color;
+    text-align: center;
 }
 
 main {
@@ -186,6 +187,7 @@ footer {
         justify-content: space-between;
         text-align: center;
         padding: 20px;
+        margin: 60px;
     }
 }
 
@@ -222,10 +224,10 @@ footer {
         background-color: $background-color;
         border: 3px solid $primary-color;
         border-radius: 12px;
-        padding: 20px;
+        padding: 40px;
         width: 100%; 
         max-width: 800px; 
-        margin: 20px auto;
+        margin: 60px;
     }
 
     .team-photos {
@@ -357,11 +359,14 @@ footer {
         }
     }
 
-    .domestic-list, .commercial-list, .testing-list {
+    .estimates-form {
+        grid-column: span 3;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px; 
     }
 
+    
     .intro-estimates {
         grid-area: intro-estimates;
     }
@@ -394,11 +399,11 @@ footer {
         grid-area: total-price-container;
     }
 
+
     .intro-estimates, .domestic-estimates, .commercial-estimates, .testing-estimate, .domestic-list, .commercial-list, .testing-list, .total-price-container {
         background-color: $background-color;
         border: 3px solid $primary-color;
         border-radius: 12px;
-        padding: 20px;
         margin: 60px;
         box-sizing: border-box; 
         display: flex;
@@ -407,6 +412,7 @@ footer {
         align-items: center; 
         text-align: center; 
         flex: 1; 
+        padding: 20px;
     }
 
     // Estimates Form Styling 
@@ -420,7 +426,7 @@ footer {
             background-color: #f9f9f9;
             border: 1px solid #ccc;
             border-radius: 5px;
-            padding: 10px;
+            padding: 30px;
             margin-bottom: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.103);
             transition: background-color 0.3s ease;
@@ -509,12 +515,20 @@ footer {
         "contact-form-container contact-form-container";
     gap: 20px;
     justify-items: center;
-    padding: 20px;
-    box-sizing: border-box;
 
     .contact-image {
         grid-area: contact-image;
+        padding: 0;
+        margin-bottom: 10px;
+
+        img {
+            width: 100%; 
+            height: 400px;
+            object-fit: cover; 
+            object-position: 0% 65%;
+        }
     }
+    
 
     .contact-intro {
         grid-area: contact-intro;
@@ -551,7 +565,19 @@ footer {
         max-width: 600px;
     }
 
+    .contact-info  a {
+        color: $primary-color;
+        text-decoration: none; 
+    
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
     .contact-form {
+       
+       
         label {
             display: flex;
             flex-direction: column;
@@ -584,9 +610,4 @@ footer {
         }
     }
 }
-
-
-
-
-
 

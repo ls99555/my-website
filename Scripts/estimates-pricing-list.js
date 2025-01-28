@@ -47,14 +47,24 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: 'Emergency Lighting Testing', price: 100 }
     ];
 
+    /**
+     * Creates an estimate form for the given services and appends it to the container.
+     * @param {Array} services - Array of service objects with name and price properties.
+     * @param {HTMLElement} container - The container element to append the form to.
+     * @param {string} headingText - The heading text for the form.
+     */
     function createEstimateForm(services, container, headingText) {
+        // Create and append the heading
         const heading = document.createElement('h2');
         heading.textContent = headingText;
         container.appendChild(heading);
 
+        // Create the form element
         const form = document.createElement('form');
         form.className = 'estimates-form';
+        form.addEventListener('submit', (event) => event.preventDefault()); // Prevent form submission
 
+        // Create and append form elements for each service
         services.forEach(service => {
             const label = document.createElement('label');
             label.className = 'service-label';
@@ -66,18 +76,22 @@ document.addEventListener('DOMContentLoaded', function() {
             input.dataset.price = service.price;
             input.min = 0;
             input.value = 0;
+            input.setAttribute('aria-label', service.name); // Accessibility
 
             label.appendChild(input);
             form.appendChild(label);
         });
 
-        const totalEstimate = document.createElement('p');
+        // Create and append the total estimate element
+        const totalEstimate = document.createElement('h4');
+        totalEstimate.className = 'total-estimate-heading';
         totalEstimate.innerHTML = 'Total Estimate: £<span class="total-estimate">0</span>';
-        totalEstimate.style.gridColumn = 'span 3'; 
         form.appendChild(totalEstimate);
 
+        // Append the form to the container
         container.appendChild(form);
 
+        // Add event listeners to update the total estimate
         const serviceInputs = form.querySelectorAll('.service');
         const totalEstimateElement = form.querySelector('.total-estimate');
 
@@ -85,16 +99,22 @@ document.addEventListener('DOMContentLoaded', function() {
             service.addEventListener('change', updateTotal);
         });
 
+        /**
+         * Updates the total estimate based on the input values.
+         */
         function updateTotal() {
             let total = 0;
             serviceInputs.forEach(service => {
-                total += parseFloat(service.dataset.price) * parseInt(service.value, 10);
+                total += service.value * service.dataset.price;
             });
             totalEstimateElement.textContent = total.toFixed(2);
             updateTotalPrice();
         }
     }
 
+    /**
+     * Updates the grand total price by summing up all individual total estimates.
+     */
     function updateTotalPrice() {
         const totalEstimates = document.querySelectorAll('.total-estimate');
         let grandTotal = 0;
@@ -132,6 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
     createEstimateForm(commercialServices, commercialList, 'Commercial Estimates');
     createEstimateForm(testingServices, testingList, 'Testing Estimates');
 
-    // Initial call to updateTotalPrice to set the initial total estimate
+    
     updateTotalPrice();
 });
