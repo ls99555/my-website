@@ -1,9 +1,10 @@
+let totalEstimateValue = 0;
+
 document.addEventListener('DOMContentLoaded', function() {
     const domesticList = document.querySelector('.domestic-list');
     const commercialList = document.querySelector('.commercial-list');
     const testingList = document.querySelector('.testing-list');
-    const totalPriceContainer = document.querySelector('.total-price');
-    const additionalInfoForm = document.querySelector('.additional-info-form');
+    const totalPriceContainer = document.querySelector('.total-price-container');
 
     const domesticServices = [
         { name: 'New cooker or oven supply', price: 80 },
@@ -47,12 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: 'Emergency Lighting Testing', price: 100 }
     ];
 
-    /**
-     * Creates an estimate form for the given services and appends it to the container.
-     * @param {Array} services - Array of service objects with name and price properties.
-     * @param {HTMLElement} container - The container element to append the form to.
-     * @param {string} headingText - The heading text for the form.
-     */
+    
+    // Creates estiamtes forms
     function createEstimateForm(services, container, headingText) {
         // Create and append the heading
         const heading = document.createElement('h2');
@@ -62,8 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create the form element
         const form = document.createElement('form');
         form.className = 'estimates-form';
-        form.addEventListener('submit', (event) => event.preventDefault()); // Prevent form submission
-
+        
         // Create and append form elements for each service
         services.forEach(service => {
             const label = document.createElement('label');
@@ -108,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 total += service.value * service.dataset.price;
             });
             totalEstimateElement.textContent = total.toFixed(2);
+            totalEstimateValue = total;
             updateTotalPrice();
         }
     }
@@ -124,34 +121,36 @@ document.addEventListener('DOMContentLoaded', function() {
         totalPriceContainer.innerHTML = `<h2>Your total estimate is £${grandTotal.toFixed(2)}</h2>`;
     }
 
-    additionalInfoForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const formData = new FormData(additionalInfoForm);
-        let selectedServices = '';
-
-        document.querySelectorAll('.estimates-form').forEach(form => {
-            form.querySelectorAll('.service').forEach(input => {
-                if (parseInt(input.value, 10) > 0) {
-                    selectedServices += `${input.parentElement.textContent.trim()} Quantity: ${input.value}\n`;
-                }
-            });
-        });
-
-        const mailtoLink = `mailto:example@example.com?subject=Estimate Request&body=${encodeURIComponent(
-            `Total Estimate: £${grandTotal.toFixed(2)}\n\n` +
-            `Selected Services:\n${selectedServices}\n` +
-            `Additional Information: ${formData.get('additional-info')}\n` +
-            `Name: ${formData.get('name')}\n` +
-            `Email: ${formData.get('email')}\n` +
-            `Phone Number: ${formData.get('phone')}`
-        )}`;
-        window.location.href = mailtoLink;
-    });
-
-    createEstimateForm(domesticServices, domesticList, 'Domestic Estimates');
-    createEstimateForm(commercialServices, commercialList, 'Commercial Estimates');
-    createEstimateForm(testingServices, testingList, 'Testing Estimates');
+    createEstimateForm(domesticServices, domesticList, 'Domestic Services');
+    createEstimateForm(commercialServices, commercialList, 'Commercial Services');
+    createEstimateForm(testingServices, testingList, 'Testing Services');
 
     
     updateTotalPrice();
 });
+
+/**
+ * Handles the form submission.
+ * @param {Event} event - The form submission event.
+ */
+function handleSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Send the form data to the server using fetch
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    }).then(response => {
+        if (response.ok) {
+            alert('Form submitted successfully');
+        } else {
+            alert('Form submission failed');
+        }
+    }).catch(error => {
+        console.error('Error submitting form:', error);
+        alert('Error submitting form');
+    });
+}
